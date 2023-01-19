@@ -1,0 +1,17 @@
+ul.radiolist  {
+    list-style-type: none;
+    display: inline-grid;
+    width: fit-content;
+    padding-inline-start: 0px;
+  }
+  
+  li {
+     float: left;
+  }
+
+  input[type=radio] {float:left;}
+
+  li label {
+   float: left;
+   padding-left: 2px;
+  }
