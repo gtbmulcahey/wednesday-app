@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import {About} from './About';
 import {Enid} from './Enid';
+import Main from './Main';
 import {
   BrowserRouter,
   Routes,
@@ -17,6 +18,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/about" element={<About />} />
       <Route path="/enid" element={<Enid />} />
+      <Route path="/wednesday" element={<Main />} />
     </Routes>
   </BrowserRouter>
 

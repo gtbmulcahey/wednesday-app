@@ -36,13 +36,12 @@ function Main(props) {
 
   return (
     <form>
-      <Header name="Wednesday" />
-      <h1>Think ya got this, huh? Tell me about {focusCharacter}</h1>
       <img height="200"
         alt="Wednesday"
         src={WednesdayAddamsImage} />
 
       <QuizQuestions name={focusCharacter} charactersObject={charactersObject} questionAnswers={outcastCharacteristics} correctAnswer={"Prophecy"} />
+    
     </form>
   );
 }

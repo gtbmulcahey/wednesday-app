@@ -1,9 +1,9 @@
 export const Header = ({name}) => {
     return (
         <header>
-            <h1>How well do you know {name}?</h1>
+            <h2>Wednesday Trivia</h2>
             <section>
-                <p>One of the top shows right now on Netflix</p>
+                <p>Wednesday is one of the top shows right now on Netflix</p>
             </section>
         </header>
     );

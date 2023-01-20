@@ -1,15 +1,14 @@
 
 import './App.css';
-import WednesdayAddamsImage from './WednesdayAddams.png';
-//import EnidImage from './EnidImage.jpg';
 import { Link } from "react-router-dom";
-import { CharacterLink } from './CharacterLink';
 import { SplitScreen } from './SplitScreen';
 import Main from "./Main";
 import { SmallPersonListItem } from './people/SmallPersonListItem';
-import { PersonImageListItem } from './people/PersonImageListItem';
 import { RegularList } from './RegularList';
-import { ImageList } from './ImageList';
+import { LargePersonListItem } from './people/LargePersonListItem';
+import { Modal } from './Modal';
+import { Header } from './Header';
+
 
 const people = [
   {
@@ -20,7 +19,7 @@ const people = [
     hairColor: "brown-black",
     hobbies: ["writing", "cello", "fencing "],
     characteristic: "Prophecy",
-    imgageSrc: "WednesdayAddamsImage.png"
+    imageSrc: "WednesdayAddamsImage.png"
   }
   , {
     id: "Enid",
@@ -75,28 +74,32 @@ function Footer(props) {
 
 
 function App() {
-
-  
-
-  const commonQuestions = [
-    "What is this person's primary characteristic?",
-    "Is this person a suspect?"
-  ]
-
   console.log(people);
   return (
-    // <div className="App">
-    //    <Header name="Wednesday" />
-    //    <Main name="Wednesday" />
-    //    <Footer />
-    // </div>
+    <div className="App">
+       <Header name="Wednesday" />
+       <Main name="Wednesday" />
+       <RegularList
+     	items={people}
+     	resourceName="person"
+     	itemComponent={SmallPersonListItem} />
+       <Footer />
+    </div>
 
-    <>
-      <SplitScreen leftWeight={1} rightWeight={4}>
-        <LeftHandComponent name="Enid" />
-        <RightHandComponent message="HelloWorld" />
-      </SplitScreen>
-    </>
+    // <>
+    //   <SplitScreen leftWeight={1} rightWeight={4}>
+    //     <LeftHandComponent name="Enid" />
+    //     <RightHandComponent message="HelloWorld" />
+    //   </SplitScreen>
+    // </>
+
+    // <>
+    // <Modal>
+    //   <LargePersonListItem person={people[0]} />
+    // </Modal>
+    // </>
+
+
     // {/* <RegularList
     // 	items={people}
     // 	resourceName="person"
