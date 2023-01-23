@@ -36,9 +36,11 @@ function Main({people, person}) {
         alt={person.name}
         src={images(`./${person.imageSrc}`)}/>
 
+      <LargePersonListItem person={person}/>
+
       <QuizQuestions name={person.name} charactersObject={charactersObject} questionAnswers={outcastCharacteristics} correctAnswer={"Prophecy"} />
      
-      <LargePersonListItem person={person}/>
+      
     </form>
   );
 }

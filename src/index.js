@@ -17,7 +17,6 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/about" element={<About />} />
-      <Route path="/enid" element={<Enid />} />
       <Route path="/wednesday" element={<Main />} />
     </Routes>
   </BrowserRouter>

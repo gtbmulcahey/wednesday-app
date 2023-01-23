@@ -1,0 +1,16 @@
+ul.hobbies {
+    list-style-type: none;
+    display: -ms-inline-grid;
+    width:fit-content;
+    padding-left: 0px;
+    display:inline-block;
+
+}
+
+ul label {
+    float:center;
+}
+
+ul.hobbies li {
+    float: none;
+}
