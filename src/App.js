@@ -1,5 +1,5 @@
 
-import './App.css';
+import './css/App.css';
 import { MainLayout } from './MainLayout';
 import { useState, useEffect } from 'react';
 
@@ -52,12 +52,45 @@ const people = [
     id: "Weems",
     key: "Weems",
     name: "Weems",
-    age: 48,
-    hairColor: "blonde, very blonde",
+    age: 56,
+    hairColor: "silver gray",
     hobbies: ["being a tough principal"],
     characteristic: "Shape Shifter",
     roleInTheShow: "Principal Weems is one tough lady. She keeps the school in line. What a job!",
     imageSrc: "Weems.jpg"
+  }
+  , {
+    id: "Tyler",
+    key: "Tyler",
+    name: "Tyler",
+    age: 16,
+    hairColor: "brown",
+    hobbies: ["working at coffee shop"],
+    characteristic: "Hyde",
+    roleInTheShow: "Wednesday's friend and potential love interest",
+    imageSrc: "Tyler.jpg"
+  }
+  , {
+    id: "Bianca",
+    key: "Bianca",
+    name: "Bianca",
+    age: 15,
+    hairColor: "dark brown",
+    hobbies: ["fencing, being a member of the Nightshades"],
+    characteristic: "Siren",
+    roleInTheShow: "Wednesday's frenemie",
+    imageSrc: "Bianca.jpg"
+  }
+  , {
+    id: "Ajax",
+    key: "Ajax",
+    name: "Ajax",
+    age: 14,
+    hairColor: "dark brown",
+    hobbies: ["None that we know of"],
+    characteristic: "Gorgon",
+    roleInTheShow: "Enid's love interest",
+    imageSrc: "Ajax.png"
   }
 ]
 

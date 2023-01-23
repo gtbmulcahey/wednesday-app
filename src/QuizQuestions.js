@@ -1,12 +1,14 @@
 import {RadioButtonGroup} from './RadioButtonGroup';
 
 function QuizQuestions(props) {
-  //console.log(`In QuizQuestions. possible quiz answers are ${props.questionAnswers}`);
+
+  let possibleAnswers = props.people.map(person=> person.characteristic);
+  possibleAnswers = possibleAnswers.sort(() => Math.random() - 0.5); // put in random order
 
   return (
       <>
         <p>What is {props.name}'s outcast characteristic?</p>
-        <RadioButtonGroup name={props.name} charactersObject = {props.charactersObject} questionAnswers={props.questionAnswers} />
+        <RadioButtonGroup name={props.name} people = {props.people} questionAnswers={possibleAnswers} />
       </>
   );
 }

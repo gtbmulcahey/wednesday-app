@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './RadioButtonGroup.css';
+import './css/RadioButtonGroup.css';
 import { CharacteristicAnswer } from './CharacteristicAnswer';
 
 
@@ -37,11 +37,11 @@ export function RadioButtonGroup(props) {
 
       
     return (
-        <div>
+        <>
             <ul className='radiolist'>
                 {listItems}
             </ul>
-            <CharacteristicAnswer name={props.name} charactersObject={props.charactersObject} userAnswer={selectedRadioBtn}/> 
-        </div>
+            <CharacteristicAnswer name={props.name} people={props.people} userAnswer={selectedRadioBtn}/> 
+        </>
     )
 }

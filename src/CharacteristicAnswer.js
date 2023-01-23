@@ -1,6 +1,6 @@
 export function CharacteristicAnswer(props) {
         function getCharacter(characterId) {
-        return props.charactersObject.filter(character => character.id === characterId)[0] 
+        return props.people.filter(character => character.id === characterId)[0] 
     }
 
     if(props.userAnswer)  {

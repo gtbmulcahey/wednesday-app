@@ -3,6 +3,7 @@ ul.radiolist  {
     display: inline-grid;
     width: fit-content;
     padding-inline-start: 0px;
+    padding:10px;
   }
   
   li {

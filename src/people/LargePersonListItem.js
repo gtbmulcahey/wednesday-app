@@ -1,4 +1,4 @@
-import "../LargePersonListItem.css";
+import "../css/LargePersonListItem.css";
 
 export const LargePersonListItem = ({ person }) => {
 	const { name, age, hairColor, hobbies, roleInTheShow } = person;
