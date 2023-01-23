@@ -5,8 +5,6 @@ import EnidImage from './EnidImage.jpg';
 import { LargePersonListItem } from "./people/LargePersonListItem";
 
 function Main({people, person}) {
-  console.log(`people are ${people}`);
-  console.log(`person name is ${person.name}`);
 
   useEffect(() => {
     console.log(`Focus character is ${person.name} right now`);
@@ -22,7 +20,6 @@ function Main({people, person}) {
     "Gorgon"
   ];
 
-
   const charactersObject = [
     { id: "Wednesday", key: "Wednesday", name: "Wednesday", characteristic: "Prophecy", imgageSrc: { WednesdayAddamsImage } },
     { id: "Weems", key: "Weems", name: "Weems", characteristic: "Shape Shifter" },
@@ -31,11 +28,13 @@ function Main({people, person}) {
     { id: "Enid", key: "Enid", name: "Enid", characteristic: "Werewolf", imageSrc: { EnidImage } }
   ]
 
+  const images = require.context('./', true);
+
   return (
     <form>
       <img height="200"
-        alt="Wednesday"
-        src={WednesdayAddamsImage} />
+        alt={person.name}
+        src={images(`./${person.imageSrc}`)}/>
 
       <QuizQuestions name={person.name} charactersObject={charactersObject} questionAnswers={outcastCharacteristics} correctAnswer={"Prophecy"} />
      

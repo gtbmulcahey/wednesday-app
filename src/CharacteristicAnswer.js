@@ -9,7 +9,6 @@ export function CharacteristicAnswer(props) {
             return (
                 <div>
                     <p>Yep. That's it. Good job.</p> 
-                    <p>Check out the other characters on the show.</p>
                 </div>);
         } else {
             return (<div>Nope, not that one. The correct answer is {character.characteristic}</div>);

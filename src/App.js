@@ -12,7 +12,7 @@ const people = [
     hairColor: "brown-black",
     hobbies: ["writing", "cello", "fencing "],
     characteristic: "Prophecy",
-    imageSrc: "WednesdayAddamsImage.png"
+    imageSrc: "WednesdayAddams.png"
   }
   , {
     id: "Enid",
