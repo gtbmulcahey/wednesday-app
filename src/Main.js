@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import QuizQuestions from "./QuizQuestions";
 import WednesdayAddamsImage from './WednesdayAddams.png';
 import EnidImage from './EnidImage.jpg';
-import {Header} from './Header'
+import { LargePersonListItem } from "./people/LargePersonListItem";
 
-
-function Main(props) {
-  const [focusCharacter, setFocusCharacter] = useState(props.name);
-
+function Main({people, person}) {
+  console.log(`people are ${people}`);
+  console.log(`person name is ${person.name}`);
 
   useEffect(() => {
-    console.log(`Focus character is ${focusCharacter} right now`);
-  }, [focusCharacter]);
+    console.log(`Focus character is ${person.name} right now`);
+  }, [person]);
 
   const outcastCharacteristics = [
     "Shape Shifter",
@@ -23,7 +22,6 @@ function Main(props) {
     "Gorgon"
   ];
 
-  console.log(`In Main. quiz answers are ${outcastCharacteristics}`);
 
   const charactersObject = [
     { id: "Wednesday", key: "Wednesday", name: "Wednesday", characteristic: "Prophecy", imgageSrc: { WednesdayAddamsImage } },
@@ -32,7 +30,6 @@ function Main(props) {
     { id: "Tyler", key: "Tyler", name: "Tyler", characteristic: "Hyde" },
     { id: "Enid", key: "Enid", name: "Enid", characteristic: "Werewolf", imageSrc: { EnidImage } }
   ]
-  console.log(`In Main. charactersObject is ${charactersObject}`);
 
   return (
     <form>
@@ -40,8 +37,9 @@ function Main(props) {
         alt="Wednesday"
         src={WednesdayAddamsImage} />
 
-      <QuizQuestions name={focusCharacter} charactersObject={charactersObject} questionAnswers={outcastCharacteristics} correctAnswer={"Prophecy"} />
-    
+      <QuizQuestions name={person.name} charactersObject={charactersObject} questionAnswers={outcastCharacteristics} correctAnswer={"Prophecy"} />
+     
+      <LargePersonListItem person={person}/>
     </form>
   );
 }

@@ -1,14 +1,16 @@
 export const LargePersonListItem = ({ person }) => {
 	const { name, age, hairColor, hobbies } = person;
 
+console.log("person name is " + name);
+
 	return (
 		<>
-		<h3>{name}</h3>
+		<p>More about {name}</p>
 		<p>Age: {age} years</p>
 		<p>Hair Color: {hairColor}</p>
-		<h3>Hobbies:</h3>
+		<p>Hobbies:</p>
 		<ul>
-			{hobbies.map(hobby => <li key={hobby}>{hobby}</li>)}
+			{hobbies && hobbies.map(hobby => <li key={hobby}>{hobby}</li>)}
 		</ul>
 		</>
 	);

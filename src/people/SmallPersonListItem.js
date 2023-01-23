@@ -1,33 +1,15 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { LargePersonListItem } from './LargePersonListItem';
-import { Modal } from '../Modal';
+export const SmallPersonListItem = ({ person, callback }) => {
 
-export const SmallPersonListItem = ({ person }) => {
-    //const { name, age } = person;
-    const [shouldShowModal, setShouldShowModal] = useState(false);
-    console.log("in small item list" + person.name);
+    console.log("callback is " + callback);
 
-    useEffect(() => {
-        console.log(`shouldShowModal is ${shouldShowModal} right now`);
-    }, [shouldShowModal]);
+    const onTrigger = person => () => {
+        console.log("person name is " + person.name);
+        console.log("person age is " + person.age);
+        callback(person);
+    }
 
     return (
-        <>
-            <p>
-                <button onClick={() => setShouldShowModal(true)}>{person.name}</button>
-                Age: {person.age} years
-            </p>
-            {
-                shouldShowModal &&
-                (
-                    <div>
-                        <Modal>
-                            <LargePersonListItem person={person} />
-                        </Modal>
-                    </div>
-                )
-            }
-        </>
-    )
+        // <Link to={{pathname:'/', myCustomProps: {person}}}>{person.name}</Link>
+        <button onClick={onTrigger(person)}>{person.name}</button>
+    );
 }

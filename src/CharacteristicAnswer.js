@@ -1,7 +1,5 @@
 export function CharacteristicAnswer(props) {
-    console.log(`In Answer. charactersObject is ${props.charactersObject}`);
-
-    function getCharacter(characterId) {
+        function getCharacter(characterId) {
         return props.charactersObject.filter(character => character.id === characterId)[0] 
     }
 

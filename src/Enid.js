@@ -1,11 +1,15 @@
 import EnidImage from './EnidImage.jpg';
-import { LargePersonListItem } from './people/LargePersonListItem';
+import { MainLayout } from './MainLayout';
 
-export const Enid = ({props}) => {
-    console.log(`person is ${props}`);
+export const Enid = ({person}) => {
+    console.log(`person is ${person}`);
+    
+
     return (
         <div>
             <p>ENID!!!</p>
             <img height="200" src={EnidImage} alt="Enid" />
-        </div>);
+            
+        </div>)
+        ;
 };
