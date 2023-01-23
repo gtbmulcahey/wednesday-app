@@ -1,3 +1,5 @@
+import "./css/RegularList.css";
+
 export const RegularList = ({
     items,
     resourceName,

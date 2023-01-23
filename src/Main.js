@@ -8,7 +8,7 @@ function Main({people, person}) {
     console.log(`Focus character is ${person.name} right now`);
   }, [person]);
 
-  const images = require.context('./', true);
+  const images = require.context('./images', true);
 
   return (
     <form>

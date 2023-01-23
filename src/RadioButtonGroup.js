@@ -14,10 +14,6 @@ export function RadioButtonGroup(props) {
         setSelectedRadioBtn(e.currentTarget.value);
     } 
 
-    React.useEffect(() => {
-      //console.log(`Selected radio button is ${selectedRadioBtn} right now`);
-    }, [selectedRadioBtn]);
-
     const listItems = props.questionAnswers.map(answer =>
         <li key={answer}>
             <input 
@@ -35,10 +31,9 @@ export function RadioButtonGroup(props) {
         </li>
       );
 
-      
     return (
         <>
-            <ul className='radiolist'>
+            <ul className='radiolist'>{props.title}
                 {listItems}
             </ul>
             <CharacteristicAnswer name={props.name} people={props.people} userAnswer={selectedRadioBtn}/> 

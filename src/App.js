@@ -12,7 +12,7 @@ const people = [
     hairColor: "brown-black",
     hobbies: ["writing", "cello", "fencing "],
     characteristic: "Prophecy",
-    roleInTheShow: "Wednesday is the main character of the show",
+    roleInTheShow: "Wednesday is the main character of the show.",
     imageSrc: "WednesdayAddams.png"
   }
   , {
@@ -23,7 +23,7 @@ const people = [
     hairColor: "blonde with rainbows in it",
     hobbies: ["shopping"],
     characteristic: "Werewolf",
-    roleInTheShow: "Enid is Wednesday's roommate and friend",
+    roleInTheShow: "Enid is Wednesday's roommate and friend.",
     imageSrc: "EnidImage.jpg"
   }
   , {
@@ -34,8 +34,8 @@ const people = [
     hairColor: "brown",
     hobbies: ["bee keeping"],
     characteristic: "Controls Bees",
-    roleInTheShow: "Eugene is Wednesday's friend. She has a soft spot for him as he reminds her of Pugsley",
-    imageSrc: "Eugene.png"
+    roleInTheShow: "Eugene is Wednesday's friend. She has a soft spot for him as he reminds her of Pugsley.",
+    imageSrc: "Eugene.jpg"
   }
   , {
     id: "Xavier",
@@ -46,7 +46,7 @@ const people = [
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Drawings come to life",
     roleInTheShow: "Xavier has pursued Wednesday. Wednesday has been suspicious of Xavier.",
-    imageSrc: "XavierThorpe.jpg"
+    imageSrc: "Xavier.jpg"
   }
   , {
     id: "Weems",
@@ -67,7 +67,7 @@ const people = [
     hairColor: "brown",
     hobbies: ["working at coffee shop"],
     characteristic: "Hyde",
-    roleInTheShow: "Wednesday's friend and potential love interest",
+    roleInTheShow: "Wednesday's friend and potential love interest.",
     imageSrc: "Tyler.jpg"
   }
   , {
@@ -78,7 +78,7 @@ const people = [
     hairColor: "dark brown",
     hobbies: ["fencing, being a member of the Nightshades"],
     characteristic: "Siren",
-    roleInTheShow: "Wednesday's frenemie",
+    roleInTheShow: "Bianca is Wednesday's frenemie.",
     imageSrc: "Bianca.jpg"
   }
   , {
@@ -89,8 +89,8 @@ const people = [
     hairColor: "dark brown",
     hobbies: ["None that we know of"],
     characteristic: "Gorgon",
-    roleInTheShow: "Enid's love interest",
-    imageSrc: "Ajax.png"
+    roleInTheShow: "Ajax is Enid's love interest.",
+    imageSrc: "Ajax.jpg"
   }
 ]
 
