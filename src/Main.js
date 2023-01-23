@@ -17,15 +17,17 @@ function Main({people, person}) {
     "Hyde",
     "Werewolf",
     "Drawings come to life",
-    "Gorgon"
+    "Gorgon",
+    "Can control bees"
   ];
 
   const charactersObject = [
-    { id: "Wednesday", key: "Wednesday", name: "Wednesday", characteristic: "Prophecy", imgageSrc: { WednesdayAddamsImage } },
+    { id: "Wednesday", key: "Wednesday", name: "Wednesday", characteristic: "Prophecy" },
     { id: "Weems", key: "Weems", name: "Weems", characteristic: "Shape Shifter" },
     { id: "Bianca", key: "Bianca", name: "Bianca", characteristic: "Siren" },
     { id: "Tyler", key: "Tyler", name: "Tyler", characteristic: "Hyde" },
-    { id: "Enid", key: "Enid", name: "Enid", characteristic: "Werewolf", imageSrc: { EnidImage } }
+    { id: "Enid", key: "Enid", name: "Enid", characteristic: "Werewolf" },
+    { id: "Eugene", key: "Eugene", name: "Eugene", characteristic: "Can control bees"}
   ]
 
   const images = require.context('./', true);
