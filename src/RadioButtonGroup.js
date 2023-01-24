@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import './css/RadioButtonGroup.css';
 
 
-export const RadioButtonGroup = ({ person, questionAnswers, title, userAnswer, callback }) => {
+export const RadioButtonGroup = ({ person, possibleQuizAnswers, title, userAnswer, callback }) => {
 
-    const [selectedRadioBtn, setSelectedRadioBtn] = useState(userAnswer);
+    let selectedRadioBtn = userAnswer;
 
     useEffect(() => {
         console.log(`selectedRadioBtn is ${selectedRadioBtn} right now`);
@@ -22,7 +22,7 @@ export const RadioButtonGroup = ({ person, questionAnswers, title, userAnswer, c
         <>
             <ul className='radiolist'>{title}
                 {
-                    questionAnswers.map(answer =>
+                    possibleQuizAnswers.map(answer =>
                         <li key={answer}>
                             <input
                                 key={answer}

@@ -3,7 +3,7 @@ import Quiz from "./Quiz";
 import { LargePersonListItem } from "./people/LargePersonListItem";
 import { printProps } from "./printProps";
 
-function Main({people, person}) {
+function Main({people, person, possibleQuizAnswers}) {
 
   useEffect(() => {
     console.log(`Focus character is ${person.name} right now`);
@@ -20,7 +20,7 @@ function Main({people, person}) {
         src={images(`./${person.imageSrc}`)}/>
 
       <LargePersonListItem person={person}/>
-      <QuizWrapped person={person} people={people}/>
+      <QuizWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers}/>
     
     </form>
   );

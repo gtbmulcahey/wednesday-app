@@ -117,6 +117,11 @@ const people = [
   }
 ]
 
+const possibleQuizAnswers = shufflePossibleAnswers(people.map(p => p.characteristic));
+
+  function shufflePossibleAnswers(choices) {
+    return choices.sort(() => Math.random() - 0.5); // put in random order
+  }
 
 function App(props) {
   const [person, setPerson] = useState(people[0]);
@@ -136,7 +141,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <MainLayoutWrapped people={people} person={person} callback={callback}/>
+      <MainLayoutWrapped people={people} person={person} possibleQuizAnswers={possibleQuizAnswers} callback={callback}/>
     </div>
   );
 }

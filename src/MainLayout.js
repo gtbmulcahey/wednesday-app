@@ -5,13 +5,13 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { printProps } from './printProps';
 
-export const MainLayout = ({people, person, callback}) => {
+export const MainLayout = ({people, person, possibleQuizAnswers, callback}) => {
 
     const MainWrapped = printProps(Main);
 
     return (<>
         <Header name={person.name} />
-        <MainWrapped people={people} person={person} />
+        <MainWrapped people={people} person={person} possibleQuizAnswers={possibleQuizAnswers}/>
         <RegularList
             items={people}
             resourceName="person"

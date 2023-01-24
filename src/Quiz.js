@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { RadioButtonGroup } from './RadioButtonGroup';
 import { printProps } from './printProps';
 
-export const Quiz = ({ person, people }) => {
+export const Quiz = ({ person, people, possibleQuizAnswers }) => {
 
-  const [possibleAnswers, setPossibleAnswers] = useState(shufflePossibleAnswers(people.map(p => p.characteristic)));
+  //const [possibleAnswers, setPossibleAnswers] = useState(shufflePossibleAnswers(people.map(p => p.characteristic)));
+
   const [answerCorrect, setAnswerCorrect] = useState(false);
   const [userAnswer, setUserAnswer] = useState("noUserAnswer")
 
@@ -14,11 +15,6 @@ export const Quiz = ({ person, people }) => {
     console.log(`Use Effect Person.Characteristic is ${person.characteristic} right now`);
     console.log(`Use Effect AnswerCorrect is ${answerCorrect} right now`);
   }, [person, userAnswer, answerCorrect]);
-
-
-  function shufflePossibleAnswers(choices) {
-    return choices.sort(() => Math.random() - 0.5); // put in random order
-  }
 
   const title = `What is ${person.name}'s outcast characteristic?`;
 
@@ -33,7 +29,7 @@ export const Quiz = ({ person, people }) => {
 
   return (
     <div>
-      <RadioGroupWrapped person={person} people={people} questionAnswers={possibleAnswers} title={title} userAnswer={userAnswer} callback={userAnswerCallback} />
+      <RadioGroupWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers} title={title} userAnswer={userAnswer} callback={userAnswerCallback} />
       {userAnswer !== "noUserAnswer" &&
         <p>
           {(answerCorrect) ? "Your Answer is correct" : "That isn't the right answer. Please try again"}
