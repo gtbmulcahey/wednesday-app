@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import QuizQuestions from "./QuizQuestions";
+import Quiz from "./Quiz";
 import { LargePersonListItem } from "./people/LargePersonListItem";
 
 function Main({people, person}) {
@@ -17,7 +17,7 @@ function Main({people, person}) {
         src={images(`./${person.imageSrc}`)}/>
 
       <LargePersonListItem person={person}/>
-      <QuizQuestions name={person.name} people={people} />
+      <Quiz person={person} people={people}/>
     
     </form>
   );

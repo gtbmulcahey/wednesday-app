@@ -1,17 +1,16 @@
-export function CharacteristicAnswer(props) {
-        function getCharacter(characterId) {
-        return props.people.filter(character => character.id === characterId)[0] 
-    }
+export const CharacteristicAnswer = ({person, people, userAnswer}) => {
+     
+    console.log("Useranswer is " + userAnswer);
 
-    if(props.userAnswer)  {
-        const character = getCharacter(props.name);
-        if(props.userAnswer === character.characteristic) {
+    if(userAnswer)  {
+        console.log("name is " + person.name);
+        if(userAnswer === person.characteristic) {
             return (
                 <div>
                     <p>Yep. That's it. Good job.</p> 
                 </div>);
         } else {
-            return (<div>Nope, not that one. The correct answer is {character.characteristic}</div>);
+            return (<div>Nope, not that one. Please try again.</div>);
         }
     }
 

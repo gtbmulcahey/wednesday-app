@@ -92,6 +92,28 @@ const people = [
     roleInTheShow: "Ajax is Enid's love interest.",
     imageSrc: "Ajax.jpg"
   }
+  , {
+    id: "Thing",
+    key: "Thing",
+    name: "Thing",
+    age: 250,
+    hairColor: "no hair that we know of",
+    hobbies: ["Fixing Wednesday up with serial killers and stealing vintage dresses"],
+    characteristic: "Uh... missing a body",
+    roleInTheShow: "Thing was sent to spy on Wednesday by Gomez and Morticia. He's Wednesday's friend, helper.",
+    imageSrc: "Thing.jpg"
+  }
+  , {
+    id: "UncleFester",
+    key: "UncleFester",
+    name: "Uncle Fester",
+    age: 68,
+    hairColor: "Uncle Fester has no hair due to his experiments with electricity",
+    hobbies: ["Electricity", "Robbing Banks"],
+    characteristic: "Inventor",
+    roleInTheShow: "Uncle Fester showed up to be... Uncle Fester.",
+    imageSrc: "UncleFester.jpg"
+  }
 ]
 
 

@@ -1,10 +1,14 @@
-import React from 'react'; 
+import { useState, useEffect } from 'react'; 
 import './css/RadioButtonGroup.css';
-import { CharacteristicAnswer } from './CharacteristicAnswer';
 
 
-export function RadioButtonGroup(props) {
-        const [selectedRadioBtn, setSelectedRadioBtn] = React.useState('');
+export const RadioButtonGroup = ({person, questionAnswers, title, callback, userAnswer}) => {
+        
+    const [selectedRadioBtn, setSelectedRadioBtn] = useState(userAnswer);
+
+    useEffect(() => {
+        console.log(`UserAnswer is ${userAnswer} right now`);
+      }, [userAnswer, person]);
      
     function isRadioSelected(value) {
         return selectedRadioBtn === value;
@@ -12,9 +16,11 @@ export function RadioButtonGroup(props) {
     
     function handleRadioClick(e) {
         setSelectedRadioBtn(e.currentTarget.value);
+        console.log("about to callback " + e.currentTarget.value);
+        callback(e.currentTarget.value);
     } 
 
-    const listItems = props.questionAnswers.map(answer =>
+    const listItems = questionAnswers.map(answer =>
         <li key={answer}>
             <input 
                 key={answer}
@@ -33,10 +39,9 @@ export function RadioButtonGroup(props) {
 
     return (
         <>
-            <ul className='radiolist'>{props.title}
+            <ul className='radiolist'>{title}
                 {listItems}
             </ul>
-            <CharacteristicAnswer name={props.name} people={props.people} userAnswer={selectedRadioBtn}/> 
         </>
     )
 }
