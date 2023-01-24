@@ -3,15 +3,15 @@ import Main from './Main';
 import { RegularList } from './RegularList';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { printProps } from './printProps';
 
 export const MainLayout = ({people, person, callback}) => {
-    
-    console.log("in MainLayout");
-    console.log("person name is " + person.name);
+
+    const MainWrapped = printProps(Main);
 
     return (<>
         <Header name={person.name} />
-        <Main people={people} person={person}/>
+        <MainWrapped people={people} person={person} />
         <RegularList
             items={people}
             resourceName="person"

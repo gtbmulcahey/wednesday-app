@@ -1,46 +1,46 @@
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import './css/RadioButtonGroup.css';
 
 
-export const RadioButtonGroup = ({person, questionAnswers, title, callback, userAnswer}) => {
-        
+export const RadioButtonGroup = ({ person, questionAnswers, title, userAnswer, callback }) => {
+
     const [selectedRadioBtn, setSelectedRadioBtn] = useState(userAnswer);
 
     useEffect(() => {
-        console.log(`UserAnswer is ${userAnswer} right now`);
-      }, [userAnswer, person]);
-     
-    function isRadioSelected(value) {
-        return selectedRadioBtn === value;
-    }
-    
-    function handleRadioClick(e) {
-        setSelectedRadioBtn(e.currentTarget.value);
-        console.log("about to callback " + e.currentTarget.value);
-        callback(e.currentTarget.value);
-    } 
+        console.log(`selectedRadioBtn is ${selectedRadioBtn} right now`);
+        console.log(`user answer is ${userAnswer} right now`);
+    }, [person, selectedRadioBtn, userAnswer]);
 
-    const listItems = questionAnswers.map(answer =>
-        <li key={answer}>
-            <input 
-                key={answer}
-                id={answer}       
-                type="radio" 
-                name={answer}
-                value={answer} 
-                checked={isRadioSelected(answer)}
-                onChange={handleRadioClick} 
-            />
-            <label htmlFor={answer}>
-                {answer}
-            </label>
-        </li>
-      );
+
+    function handleRadioClick(e) {
+        //setSelectedRadioBtn(e.currentTarget.value);
+        //console.log("about to callback " + e.currentTarget.value);
+        callback(e.currentTarget.value);
+    }
 
     return (
         <>
             <ul className='radiolist'>{title}
-                {listItems}
+                {
+                    questionAnswers.map(answer =>
+                        <li key={answer}>
+                            <input
+                                key={answer}
+                                id={answer}
+                                type="radio"
+                                name={answer}
+                                value={answer}
+                                checked={userAnswer === answer}
+                                onChange={handleRadioClick}
+                            />
+                            <label htmlFor={answer}>
+                                {answer}
+                            </label>
+                        </li>
+                    )
+
+
+                }
             </ul>
         </>
     )

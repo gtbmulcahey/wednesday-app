@@ -1,21 +1,19 @@
 import { useState, useEffect } from 'react';
-import { RadioButtonGroup } from './RadioButtonGroup';
-import { CharacteristicAnswer } from './CharacteristicAnswer';
+import {RadioButtonGroup} from './RadioButtonGroup';
+import { printProps } from './printProps';
 
 export const Quiz = ({ person, people }) => {
 
   const [possibleAnswers, setPossibleAnswers] = useState(shufflePossibleAnswers(people.map(p => p.characteristic)));
-  const [answerCorrect, setAnswerCorrect] = useState(false);
-  const[userAnswer, setUserAnswer] = useState();
+  const [answerCorrect, setAnswerCorrect] = useState(false); 
+  const[userAnswer, setUserAnswer] = useState("noUserAnswer") 
 
   useEffect(() => {
     console.log(`Use Effect Name is ${person.name} right now`);
-    console.log(`Use Effect UserAnswer is ${userAnswer} right now`);
+    console.log(`Use Effect UserAnswer is ${userAnswer} right now'`);
     console.log(`Use Effect Person.Characteristic is ${person.characteristic} right now`);
     console.log(`Use Effect AnswerCorrect is ${answerCorrect} right now`);
   }, [person, userAnswer, answerCorrect]);
-
-  console.log("refreshing quiz. UserAnswer is " + userAnswer + "right now");
 
 
   function shufflePossibleAnswers(choices) {
@@ -28,22 +26,17 @@ export const Quiz = ({ person, people }) => {
     console.log("new userAnswer selected " + newUserAnswer);
     setUserAnswer(newUserAnswer);
     setAnswerCorrect(newUserAnswer === person.characteristic);
-
     console.log("answer correct is " + answerCorrect)
   }
 
+  const RadioGroupWrapped = printProps(RadioButtonGroup);
+
   return (
     <div>
-      <RadioButtonGroup person={person} people={people} questionAnswers={possibleAnswers} title={title} callback={userAnswerCallback} userAnswer={userAnswer} />
-
-      
+      <RadioGroupWrapped person={person} people={people} questionAnswers={possibleAnswers} title={title} userAnswer={userAnswer} callback={userAnswerCallback} />
         <p>
           {(answerCorrect) ? "Your Answer is correct" : "That isn't the right answer. Please try again"}
         </p>
-      
-
-
-
 
     </div>
   );

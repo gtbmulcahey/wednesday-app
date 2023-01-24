@@ -2,6 +2,7 @@
 import './css/App.css';
 import { MainLayout } from './MainLayout';
 import { useState, useEffect } from 'react';
+import { printProps } from './printProps';
 
 const people = [
   {
@@ -119,6 +120,7 @@ const people = [
 
 function App(props) {
   const [person, setPerson] = useState(people[0]);
+  
 
    const callback = (newPerson) => {
         setPerson(newPerson);
@@ -128,11 +130,13 @@ function App(props) {
     console.log(`Use Effect Person is ${person.name} right now`);
   }, [person]);
 
+  const MainLayoutWrapped = printProps(MainLayout);
+
 
 
   return (
     <div className="App">
-      <MainLayout people={people} person={person} callback={callback}/>
+      <MainLayoutWrapped people={people} person={person} callback={callback}/>
     </div>
   );
 }
