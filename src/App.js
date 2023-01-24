@@ -11,7 +11,7 @@ const people = [
     name: "Wednesday",
     age: 14,
     hairColor: "brown-black",
-    hobbies: ["writing on an old fashioned type writer", "cello", "fencing", "setting piranhas on enemies"],
+    hobbies: ["writing on an old fashioned type writer", "cello", "fencing", "setting killer fish on enemies"],
     characteristic: "Prophecy",
     roleInTheShow: "Wednesday is the main character of the show.",
     imageSrc: "WednesdayAddams.png"
