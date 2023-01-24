@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import {RadioButtonGroup} from './RadioButtonGroup';
+import { RadioButtonGroup } from './RadioButtonGroup';
 import { printProps } from './printProps';
 
 export const Quiz = ({ person, people }) => {
 
   const [possibleAnswers, setPossibleAnswers] = useState(shufflePossibleAnswers(people.map(p => p.characteristic)));
-  const [answerCorrect, setAnswerCorrect] = useState(false); 
-  const[userAnswer, setUserAnswer] = useState("noUserAnswer") 
+  const [answerCorrect, setAnswerCorrect] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("noUserAnswer")
 
   useEffect(() => {
     console.log(`Use Effect Name is ${person.name} right now`);
@@ -34,9 +34,11 @@ export const Quiz = ({ person, people }) => {
   return (
     <div>
       <RadioGroupWrapped person={person} people={people} questionAnswers={possibleAnswers} title={title} userAnswer={userAnswer} callback={userAnswerCallback} />
+      {userAnswer !== "noUserAnswer" &&
         <p>
           {(answerCorrect) ? "Your Answer is correct" : "That isn't the right answer. Please try again"}
         </p>
+      }
 
     </div>
   );

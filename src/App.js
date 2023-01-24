@@ -11,7 +11,7 @@ const people = [
     name: "Wednesday",
     age: 14,
     hairColor: "brown-black",
-    hobbies: ["writing", "cello", "fencing "],
+    hobbies: ["writing on an old fashioned type writer", "cello", "fencing", "setting piranhas on enemies"],
     characteristic: "Prophecy",
     roleInTheShow: "Wednesday is the main character of the show.",
     imageSrc: "WednesdayAddams.png"
@@ -22,7 +22,7 @@ const people = [
     name: "Enid",
     age: 15,
     hairColor: "blonde with rainbows in it",
-    hobbies: ["shopping"],
+    hobbies: ["shopping", "decorating with rainbows", "Top 40 Music"],
     characteristic: "Werewolf",
     roleInTheShow: "Enid is Wednesday's roommate and friend.",
     imageSrc: "EnidImage.jpg"
@@ -46,7 +46,7 @@ const people = [
     hairColor: "dishwater blonde/brown",
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Drawings come to life",
-    roleInTheShow: "Xavier has pursued Wednesday. Wednesday has been suspicious of Xavier.",
+    roleInTheShow: "Xavier has pursued Wednesday. Wednesday is suspicious of Xavier.",
     imageSrc: "Xavier.jpg"
   }
   , {
@@ -90,7 +90,7 @@ const people = [
     hairColor: "dark brown",
     hobbies: ["None that we know of"],
     characteristic: "Gorgon",
-    roleInTheShow: "Ajax is Enid's love interest.",
+    roleInTheShow: "Ajax is Enid's love interest. His outcast characteristic prevented him from going on a date with Enid.",
     imageSrc: "Ajax.jpg"
   }
   , {
@@ -99,8 +99,8 @@ const people = [
     name: "Thing",
     age: 250,
     hairColor: "no hair that we know of",
-    hobbies: ["Fixing Wednesday up with serial killers and stealing vintage dresses"],
-    characteristic: "Uh... missing a body",
+    hobbies: ["Fixing Wednesday up with serial killers", "stealing vintage dresses"],
+    characteristic: "Gets around without a body",
     roleInTheShow: "Thing was sent to spy on Wednesday by Gomez and Morticia. He's Wednesday's friend, helper.",
     imageSrc: "Thing.jpg"
   }
