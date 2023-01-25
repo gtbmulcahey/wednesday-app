@@ -21,7 +21,7 @@ const people = [
     key: "Enid",
     name: "Enid",
     age: 15,
-    hairColor: "blonde with rainbows in it",
+    hairColor: "blonde with rainbows or occasionally pink.",
     hobbies: ["shopping", "decorating with rainbows", "Top 40 Music"],
     characteristic: "Werewolf",
     roleInTheShow: "Enid is Wednesday's roommate and friend.",
@@ -46,7 +46,7 @@ const people = [
     hairColor: "dirty blonde/brown",
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Drawings come to life",
-    roleInTheShow: "Xavier has pursued Wednesday. Wednesday is suspicious of Xavier.",
+    roleInTheShow: "Xavier used to date Bianca and is now pursuing Wednesday. This has further complicated Wednesday's relationship with Bianca. We're always wondering if Xavier is a good guy or a bad guy.",
     imageSrc: "Xavier.jpg"
   }
   , {
@@ -79,7 +79,7 @@ const people = [
     hairColor: "dark brown",
     hobbies: ["fencing, being a member of the Nightshades"],
     characteristic: "Siren",
-    roleInTheShow: "Bianca is Wednesday's frenemie.",
+    roleInTheShow: "Bianca is highly accomplished and has a competitive relationship with Wednesday. She has an interesting backstory which makes us root for her in the end.",
     imageSrc: "Bianca.jpg"
   }
   , {
@@ -124,7 +124,7 @@ const people = [
     hairColor: "Auburn",
     hobbies: ["Botany"],
     characteristic: "Normie",
-    roleInTheShow: "Dorm mom and botanical sciences teacher. Thornhill, played by Christina Ricci also played Wednesday Addams in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993). Her casting in the latter role resulted in something rarely seen in media: an actor known for playing a particular character returning as an antagonist to a new version of that character.",
+    roleInTheShow: "Thornhill is Wednesday's dorm mom and botanical sciences teacher. Thornhill actor, Christina Ricci, also played Wednesday Addams in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993).",
     imageSrc: "Thornhill.jpg"
     
   }
