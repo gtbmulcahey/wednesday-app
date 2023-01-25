@@ -3,9 +3,6 @@ import { RadioButtonGroup } from './RadioButtonGroup';
 import { printProps } from './printProps';
 
 export const Quiz = ({ person, people, possibleQuizAnswers }) => {
-
-  //const [possibleAnswers, setPossibleAnswers] = useState(shufflePossibleAnswers(people.map(p => p.characteristic)));
-
   const [answerCorrect, setAnswerCorrect] = useState(false);
   const [userAnswer, setUserAnswer] = useState("noUserAnswer")
 

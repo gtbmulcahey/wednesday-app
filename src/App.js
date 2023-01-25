@@ -1,8 +1,15 @@
 
 import './css/App.css';
-import { MainLayout } from './MainLayout';
+import Main from './Main';
 import { useState, useEffect } from 'react';
 import { printProps } from './printProps';
+import { Header } from './Header';
+import { RegularList } from './RegularList';
+import { SmallPersonListItem } from './people/SmallPersonListItem';
+import { Footer } from './Footer';
+import { SplitScreen } from './SplitScreen';
+import './css/LeftHandComponent.css';
+import './css/RightHandComponent.css'
 
 const people = [
   {
@@ -14,7 +21,7 @@ const people = [
     hobbies: ["fencing", "playing the cello at all hours of the night", "writing stories on an old fashioned type writer"],
     characteristic: "Prophecy",
     roleInTheShow: "Wednesday is the main character of the show. She gets sent to Nevermore, a school for outcasts. The fun begins...",
-    imageSrc: "WednesdayAddams.png"
+    imageSrc: "Wednesday.jpg"
   }
   , {
     id: "Enid",
@@ -88,7 +95,7 @@ const people = [
     name: "Ajax",
     age: 14,
     hairColor: "dark brown",
-    hobbies: ["None that we know of"],
+    hobbies: ["being a member of the Nightshades"],
     characteristic: "Gorgon",
     roleInTheShow: "Ajax is Enid's love interest. His outcast characteristic prevented him from going on a date with Enid.",
     imageSrc: "Ajax.jpg"
@@ -104,7 +111,7 @@ const people = [
     roleInTheShow: "Thing was sent to spy on Wednesday by Gomez and Morticia. He's Wednesday's friend, helper.",
     imageSrc: "Thing.jpg"
   }
-  , 
+  ,
   {
     id: "UncleFester",
     key: "UncleFester",
@@ -116,7 +123,7 @@ const people = [
     roleInTheShow: "Uncle Fester showed up to be... Uncle Fester.",
     imageSrc: "UncleFester.jpg"
   }
-  ,{
+  , {
     id: "Thornhill",
     key: "Thornhill",
     name: "Thornhill",
@@ -126,35 +133,63 @@ const people = [
     characteristic: "Normie",
     roleInTheShow: "Thornhill is Wednesday's dorm mom and botanical sciences teacher. Thornhill actor, Christina Ricci, also played Wednesday Addams in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993).",
     imageSrc: "Thornhill.jpg"
-    
+
   }
 ]
 
 const possibleQuizAnswers = shufflePossibleAnswers(people.map(p => p.characteristic));
 
-  function shufflePossibleAnswers(choices) {
-    return choices.sort(() => Math.random() - 0.5); // put in random order
-  }
+function shufflePossibleAnswers(choices) {
+  return choices.sort(() => Math.random() - 0.5); // put in random order
+}
 
 function App(props) {
   const [person, setPerson] = useState(people[0]);
-  
 
-   const callback = (newPerson) => {
-        setPerson(newPerson);
-    }
-    
+
+  const callback = (newPerson) => {
+    setPerson(newPerson);
+  }
+
   useEffect(() => {
     console.log(`Use Effect Person is ${person.name} right now`);
   }, [person]);
 
-  const MainLayoutWrapped = printProps(MainLayout);
 
+  const LeftHandComponent = () => {
+    return (
+      <div>
+        <nav className="leftHandComponent">
+          <RegularList
+            items={people}
+            resourceName="person"
+            itemComponent={SmallPersonListItem}
+            callback={callback} />
+        </nav>
+      </div>
+    )
+  }
+  
+  const MainWrapped = printProps(Main);
 
+  const RightHandComponent = () => {
+    return (
+      <div className="rightHandComponent">
+        <MainWrapped people={people} person={person} possibleQuizAnswers={possibleQuizAnswers} />
+      </div>
+    )
+  }
 
   return (
     <div className="App">
-      <MainLayoutWrapped people={people} person={person} possibleQuizAnswers={possibleQuizAnswers} callback={callback}/>
+      <Header name={person.name} />
+      <SplitScreen
+        left={LeftHandComponent}
+        right={RightHandComponent}
+        leftWeight={1}
+        rightWeight={2}
+      />
+      <Footer />
     </div>
   );
 }
