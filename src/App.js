@@ -11,9 +11,9 @@ const people = [
     name: "Wednesday",
     age: 14,
     hairColor: "brown-black",
-    hobbies: ["writing on an old fashioned type writer", "cello", "fencing", "setting killer fish on enemies"],
+    hobbies: ["fencing", "playing the cello at all hours of the night", "writing stories on an old fashioned type writer"],
     characteristic: "Prophecy",
-    roleInTheShow: "Wednesday is the main character of the show.",
+    roleInTheShow: "Wednesday is the main character of the show. She gets sent to Nevermore, a school for outcasts. The fun begins...",
     imageSrc: "WednesdayAddams.png"
   }
   , {
