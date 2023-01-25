@@ -43,7 +43,7 @@ const people = [
     key: "Xavier",
     name: "Xavier",
     age: 15,
-    hairColor: "dishwater blonde/brown",
+    hairColor: "dirty blonde/brown",
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Drawings come to life",
     roleInTheShow: "Xavier has pursued Wednesday. Wednesday is suspicious of Xavier.",
@@ -104,7 +104,8 @@ const people = [
     roleInTheShow: "Thing was sent to spy on Wednesday by Gomez and Morticia. He's Wednesday's friend, helper.",
     imageSrc: "Thing.jpg"
   }
-  , {
+  , 
+  {
     id: "UncleFester",
     key: "UncleFester",
     name: "Uncle Fester",
@@ -115,6 +116,19 @@ const people = [
     roleInTheShow: "Uncle Fester showed up to be... Uncle Fester.",
     imageSrc: "UncleFester.jpg"
   }
+  ,{
+    id: "Thornhill",
+    key: "Thornhill",
+    name: "Thornhill",
+    age: 49,
+    hairColor: "Auburn",
+    hobbies: ["Botany"],
+    characteristic: "Normie",
+    roleInTheShow: "Dorm mom and botanical sciences teacher. Thornhill, played by Christina Ricci also played Wednesday Addams in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993). Her casting in the latter role resulted in something rarely seen in media: an actor known for playing a particular character returning as an antagonist to a new version of that character.",
+    imageSrc: "Thornhill.jpg"
+    
+  }
+
 ]
 
 const possibleQuizAnswers = shufflePossibleAnswers(people.map(p => p.characteristic));

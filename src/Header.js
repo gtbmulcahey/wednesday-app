@@ -3,7 +3,7 @@ export const Header = ({name}) => {
         <header>
             <h2>Wednesday Trivia</h2>
             <section>
-                <p>Wednesday is one of the top shows right now on Netflix</p>
+                <p>Wednesday was a hit show on Netflix (2022)</p>
             </section>
         </header>
     );
