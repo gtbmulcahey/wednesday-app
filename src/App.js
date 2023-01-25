@@ -128,7 +128,6 @@ const people = [
     imageSrc: "Thornhill.jpg"
     
   }
-
 ]
 
 const possibleQuizAnswers = shufflePossibleAnswers(people.map(p => p.characteristic));

@@ -7,7 +7,7 @@ console.log("person name is " + name);
 
 	return (
 		<>
-		<h1>{name}</h1>
+		<h2>{name}</h2>
 		<p>Age: {age} years</p>
 		<p>Hair Color: {hairColor}</p>
 		<p>{roleInTheShow}</p>
