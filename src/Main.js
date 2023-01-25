@@ -14,15 +14,14 @@ function Main({people, person, possibleQuizAnswers}) {
   const QuizWrapped = printProps(Quiz);
 
   return (
-    <form>
+    <>
       <img height="200"
         alt={person.name}
         src={images(`./${person.imageSrc}`)}/>
 
       <LargePersonListItem person={person}/>
       <QuizWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers}/>
-    
-    </form>
+    </>
   );
 }
 export default Main;

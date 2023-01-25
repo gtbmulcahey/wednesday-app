@@ -1,5 +1,3 @@
-import "./css/RegularList.css";
-
 export const RegularList = ({
     items,
     resourceName,
@@ -8,10 +6,10 @@ export const RegularList = ({
 }) => {
 
     return (
-        <div>
+        <>
             {items.map((item, i) => (
                     <ItemComponent key={i} {...{ [resourceName]: item } } callback={callback} />
             ))}
-        </ div>
+        </>
     )
 }
