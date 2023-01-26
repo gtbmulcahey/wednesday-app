@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Quiz from "./Quiz";
 import { LargePersonListItem } from "./people/LargePersonListItem";
 import { printProps } from "./printProps";
+import { ImageDisplay } from "./ImageDisplay";
 
 function Main({people, person, possibleQuizAnswers}) {
 
@@ -9,16 +10,12 @@ function Main({people, person, possibleQuizAnswers}) {
     console.log(`Focus character is ${person.name} right now`);
   }, [person]);
 
-  const images = require.context('./images', true);
-
   const QuizWrapped = printProps(Quiz);
+  const ImageWrapped = printProps(ImageDisplay);
 
   return (
     <>
-      <img height="200"
-        alt={person.name}
-        src={images(`./${person.imageSrc}`)}/>
-
+      <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc}/>
       <LargePersonListItem person={person}/>
       <QuizWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers}/>
     </>
