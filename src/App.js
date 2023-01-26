@@ -118,9 +118,9 @@ const people = [
     name: "Uncle Fester",
     age: 68,
     hairColor: "Uncle Fester has no hair due to his experiments with electricity",
-    hobbies: ["Electricity", "Robbing Banks"],
-    characteristic: "Inventor",
-    roleInTheShow: "Uncle Fester showed up to be... Uncle Fester.",
+    hobbies: ["Dynamite", "Robbing Banks", "Driving incognito getaway sidecars"],
+    characteristic: "Can generate electricity",
+    roleInTheShow: "Uncle Fester appears out of nowhere when Wednesday really needs him.",
     imageSrc: "UncleFester.jpg"
   }
   , {
@@ -131,7 +131,7 @@ const people = [
     hairColor: "Auburn",
     hobbies: ["Botany"],
     characteristic: "Normie",
-    roleInTheShow: "Thornhill is Wednesday's dorm mom and botanical sciences teacher. Thornhill actor, Christina Ricci, also played Wednesday Addams in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993).",
+    roleInTheShow: "Thornhill is Wednesday's dorm mother and botanical sciences teacher. Thornhill actor, Christina Ricci, also played Wednesday in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993).",
     imageSrc: "Thornhill.jpg"
 
   }
