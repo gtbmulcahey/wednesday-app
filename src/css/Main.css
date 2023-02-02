@@ -1,0 +1,7 @@
+p.navigateThroughImages {
+    display: inline-flex;
+}
+svg.icons {
+    padding:20px;
+    font-size: larger;
+}

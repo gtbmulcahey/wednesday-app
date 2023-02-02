@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
-import "./css/Footer.css";
+//import "./css/Footer.css";
 
 export const Footer = () => {
     return (
       <footer>
         <div>
           <nav>
-            <Link to="/about">About</Link>
+            <Link color="primary" to="/about">About</Link>
           </nav>
         </div>
       </footer>
