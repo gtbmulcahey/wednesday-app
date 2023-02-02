@@ -30,7 +30,7 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
     <>
       <p>Take the Quiz
         <IconButton color='primary'  size="large" onClick={() => {setShowQuiz(!showQuiz)}}>
-          {!showQuiz ? <ExpandMoreIcon /> : <ExpandLessIcon /> }
+          {!showQuiz ? <ExpandMoreIcon className="icons"/> : <ExpandLessIcon className="icons"/> }
         </IconButton>
       </p>
 

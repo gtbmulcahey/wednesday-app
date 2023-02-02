@@ -6,6 +6,7 @@ import { ImageDisplay } from "./ImageDisplay";
 import IconButton from '@mui/material/IconButton';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import './css/Main.css';
 
 const people = [
   {
@@ -173,13 +174,13 @@ function Main() {
 
   return (
     <>
-      <p>
+      <p className="navigateThroughImages">
       <IconButton color='primary'  size="large" onClick={goToPrevious}>
-           <NavigateBeforeIcon /> 
+           <NavigateBeforeIcon className="icons"/> 
         </IconButton>
         <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc} />
         <IconButton color='primary'  size="large" onClick={goToNext}>
-          <NavigateNextIcon />
+          <NavigateNextIcon className="icons"/>
         </IconButton>
       </p>
       <LargePersonListItem person={person} />
