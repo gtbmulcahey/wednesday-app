@@ -175,7 +175,7 @@ function Main() {
     <>
       <p className="navigateThroughImages">
         <PreviousButton onClick={goToPrevious} />
-        <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc} />
+        <ImageWrapped height="200" width="200" alt={person.name} person={person} imageName={person.imageSrc} />
         <NextButton onClick={goToNext} />
       </p>
       <LargePersonListItem person={person} />
