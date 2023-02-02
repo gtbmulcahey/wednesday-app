@@ -1,4 +1,4 @@
-export const Header = ({name}) => {
+export const Header = () => {
     return (
         <header>
             <h1>Wednesday Trivia</h1>
