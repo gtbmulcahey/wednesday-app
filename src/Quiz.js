@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { RadioButtonGroup } from './RadioButtonGroup';
 import { printProps } from './printProps';
 import './css/Quiz.css';
-import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ExpandMoreOrLessButton } from './composition';
