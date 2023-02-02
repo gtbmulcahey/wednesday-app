@@ -3,9 +3,8 @@ import Quiz from "./Quiz";
 import { LargePersonListItem } from "./people/LargePersonListItem";
 import { printProps } from "./printProps";
 import { ImageDisplay } from "./ImageDisplay";
-import IconButton from '@mui/material/IconButton';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { PreviousButton } from "./composition";
+import { NextButton } from "./composition";
 import './css/Main.css';
 
 const people = [
@@ -175,13 +174,9 @@ function Main() {
   return (
     <>
       <p className="navigateThroughImages">
-      <IconButton disableRipple={true} color='primary'  size="large" onClick={goToPrevious}>
-           <NavigateBeforeIcon className="icons"/> 
-        </IconButton>
+        <PreviousButton onClick={goToPrevious} />
         <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc} />
-        <IconButton disableRipple={true} color='primary'  size="large" onClick={goToNext}>
-          <NavigateNextIcon className="icons"/>
-        </IconButton>
+        <NextButton onClick={goToNext} />
       </p>
       <LargePersonListItem person={person} />
       <QuizWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers} />
