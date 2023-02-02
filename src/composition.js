@@ -34,18 +34,10 @@ export const NextButton = ({onClick, props}) => {
     )
 }
 
-export const ExpandMoreButton = ({onClick, props}) => {
+export const ExpandMoreOrLessButton = ({onClick, children, props}) => {
     return (
         <ApplicationIconButton onClick={onClick} >
-            <ExpandMoreIcon className="icons"/>
-        </ApplicationIconButton>
-    )
-}
-
-export const ExpandLessButton = ({onClick, props}) => {
-    return (
-        <ApplicationIconButton onClick={onClick} >
-            <ExpandMoreIcon className="icons"/>
+            {children}
         </ApplicationIconButton>
     )
 }

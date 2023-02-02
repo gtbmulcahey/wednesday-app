@@ -5,6 +5,7 @@ import './css/Quiz.css';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { ExpandMoreOrLessButton } from './composition';
 
 
 export const Quiz = ({ person, people, possibleQuizAnswers }) => {
@@ -29,9 +30,9 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
   return (
     <>
       <p>Take the Quiz
-        <IconButton color='primary'  size="large" onClick={() => {setShowQuiz(!showQuiz)}}>
+        <ExpandMoreOrLessButton onClick={() => {setShowQuiz(!showQuiz)}}>
           {!showQuiz ? <ExpandMoreIcon className="icons"/> : <ExpandLessIcon className="icons"/> }
-        </IconButton>
+        </ExpandMoreOrLessButton>
       </p>
 
       {showQuiz &&
