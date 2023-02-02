@@ -175,11 +175,11 @@ function Main() {
   return (
     <>
       <p className="navigateThroughImages">
-      <IconButton color='primary'  size="large" onClick={goToPrevious}>
+      <IconButton disableRipple={true} color='primary'  size="large" onClick={goToPrevious}>
            <NavigateBeforeIcon className="icons"/> 
         </IconButton>
         <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc} />
-        <IconButton color='primary'  size="large" onClick={goToNext}>
+        <IconButton disableRipple={true} color='primary'  size="large" onClick={goToNext}>
           <NavigateNextIcon className="icons"/>
         </IconButton>
       </p>
