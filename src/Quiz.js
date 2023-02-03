@@ -28,7 +28,7 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
 
   return (
     <>
-      <p>Take the Quiz
+      <p className="takeQuiz">Take the Quiz - Spoiler alert
         <ExpandMoreOrLessButton onClick={() => {setShowQuiz(!showQuiz)}}>
           {!showQuiz ? <ExpandMoreIcon className="icons"/> : <ExpandLessIcon className="icons"/> }
         </ExpandMoreOrLessButton>
@@ -40,7 +40,7 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
 
       {userAnswer !== "noUserAnswer" &&
         <p>
-          {(answerCorrect) ? "Your Answer is correct" : "That isn't the right answer. Please try again"}
+          {(answerCorrect) ? `Yes, that is what ${person.name} is known for on the show` : "That isn't the right answer. Please try again"}
         </p>
       }
 
