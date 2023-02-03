@@ -3,9 +3,8 @@ import Quiz from "./Quiz";
 import { LargePersonListItem } from "./people/LargePersonListItem";
 import { printProps } from "./printProps";
 import { ImageDisplay } from "./ImageDisplay";
-import IconButton from '@mui/material/IconButton';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { PreviousButton } from "./composition";
+import { NextButton } from "./composition";
 import './css/Main.css';
 
 const people = [
@@ -16,7 +15,7 @@ const people = [
     age: 14,
     hairColor: "brown-black",
     hobbies: ["fencing", "playing the cello at all hours of the night", "writing stories on an old fashioned type writer"],
-    personality: "serious, gloomy",
+    personality: "storm cloud, serious, gloomy",
     characteristic: "Prophecy",
     roleInTheShow: "Wednesday is the main character of the show. She gets sent to Nevermore, a school for outcasts. The fun begins...",
     imageSrc: "Wednesday.jpg"
@@ -28,7 +27,7 @@ const people = [
     age: 15,
     hairColor: "blonde with rainbows or occasionally pink.",
     hobbies: ["shopping", "decorating with rainbows", "Top 40 Music"],
-    personality: "bright, shiny, bubbly",
+    personality: "sunshine, bright, shiny, bubbly",
     characteristic: "Werewolf",
     roleInTheShow: "Enid is Wednesday's roommate and friend.",
     imageSrc: "EnidImage.jpg"
@@ -40,7 +39,7 @@ const people = [
     age: 14,
     hairColor: "brown",
     hobbies: ["bee keeping"],
-    personality: "quiet",
+    personality: "quiet, introvert",
     characteristic: "Controls Bees",
     roleInTheShow: "Eugene is Wednesday's friend. She has a soft spot for him as he reminds her of Pugsley.",
     imageSrc: "Eugene.jpg"
@@ -53,6 +52,7 @@ const people = [
     hairColor: "dirty blonde/brown",
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Drawings come to life",
+    personality: "charming, untrustworthy, secretive, flirty",
     roleInTheShow: "Xavier used to date Bianca and is now pursuing Wednesday. This has further complicated Wednesday's relationship with Bianca. We're always wondering if Xavier is a good guy or a bad guy.",
     imageSrc: "Xavier.jpg"
   }
@@ -63,8 +63,9 @@ const people = [
     age: 56,
     hairColor: "silver gray",
     hobbies: ["being a tough principal"],
+    personality: "students see her as tough, but we get the feeling she's a softer more vulnerable person than the students see.",
     characteristic: "Shape Shifter",
-    roleInTheShow: "Principal Weems is one tough lady. She keeps the school in line. What a job!",
+    roleInTheShow: "Principal Weems runs Nevermore. She has a complicated relationship with Morticia which further complicates her relationship with Wednesday.",
     imageSrc: "Weems.jpg"
   }
   , {
@@ -75,6 +76,7 @@ const people = [
     hairColor: "brown",
     hobbies: ["working at coffee shop"],
     characteristic: "Hyde",
+    personality: "sweet and sensitve",
     roleInTheShow: "Wednesday's friend and potential love interest.",
     imageSrc: "Tyler.jpg"
   }
@@ -86,7 +88,8 @@ const people = [
     hairColor: "dark brown",
     hobbies: ["fencing, being a member of the Nightshades"],
     characteristic: "Siren",
-    roleInTheShow: "Bianca is highly accomplished and has a competitive relationship with Wednesday. She has an interesting backstory which makes us root for her in the end.",
+    personality: "tough, but underneath that she's insecure",
+    roleInTheShow: "Bianca is the queen bee and highly accomplished. She has a competitive relationship with Wednesday. She has an interesting backstory which makes us root for her in the end.",
     imageSrc: "Bianca.jpg"
   }
   , {
@@ -94,9 +97,10 @@ const people = [
     key: "Ajax",
     name: "Ajax",
     age: 14,
-    hairColor: "dark brown",
+    hairColor: "Ajax has snakes for hair. We don't really know what color the snakes are. Maybe that's a good thing.",
     hobbies: ["being a member of the Nightshades"],
     characteristic: "Gorgon",
+    personality: "awkward and shy",
     roleInTheShow: "Ajax is Enid's love interest. His outcast characteristic prevented him from going on a date with Enid.",
     imageSrc: "Ajax.jpg"
   }
@@ -107,6 +111,7 @@ const people = [
     age: 250,
     hairColor: "no hair that we know of",
     hobbies: ["Fixing Wednesday up with serial killers", "stealing vintage dresses"],
+    personality: "helpful, a bit mischievious",
     characteristic: "Gets around without a body",
     roleInTheShow: "Thing was sent to spy on Wednesday by Gomez and Morticia. He's Wednesday's friend, helper.",
     imageSrc: "Thing.jpg"
@@ -120,6 +125,7 @@ const people = [
     hairColor: "Uncle Fester has no hair due to his experiments with electricity",
     hobbies: ["Dynamite", "Robbing Banks", "Driving incognito getaway sidecars"],
     characteristic: "Can generate electricity",
+    personality: "eccentric",
     roleInTheShow: "Uncle Fester appears out of nowhere when Wednesday really needs him.",
     imageSrc: "UncleFester.jpg"
   }
@@ -129,10 +135,23 @@ const people = [
     name: "Thornhill",
     age: 49,
     hairColor: "Auburn",
-    hobbies: ["Botany"],
+    hobbies: ["Plants, gardening"],
+    personality: "caring, sweet, maternal",
     characteristic: "Normie",
     roleInTheShow: "Thornhill is Wednesday's dorm mother and botanical sciences teacher. Thornhill actor, Christina Ricci, also played Wednesday in The Addams Family (1991) when she was ten years old and again in Addams Family Values (1993).",
     imageSrc: "Thornhill.jpg"
+  }
+  , {
+    id: 12,
+    key: "Yoko",
+    name: "Yoko",
+    age: 15,
+    hairColor: "Brown Black",
+    hobbies: ["drinking blood smoothies"],
+    personality: "cool",
+    characteristic: "Vampire",
+    roleInTheShow: "Yoko doesn't care what people think. She's the effortless cool girl. Enid becomes roommates with Yoko.",
+    imageSrc: "Yoko.jpg"
 
   }
 ]
@@ -175,13 +194,9 @@ function Main() {
   return (
     <>
       <p className="navigateThroughImages">
-      <IconButton disableRipple={true} color='primary'  size="large" onClick={goToPrevious}>
-           <NavigateBeforeIcon className="icons"/> 
-        </IconButton>
-        <ImageWrapped height="200" alt={person.name} person={person} imageName={person.imageSrc} />
-        <IconButton disableRipple={true} color='primary'  size="large" onClick={goToNext}>
-          <NavigateNextIcon className="icons"/>
-        </IconButton>
+        <PreviousButton onClick={goToPrevious} />
+        <ImageWrapped height="200" width="200" alt={person.name} person={person} imageName={person.imageSrc} />
+        <NextButton onClick={goToNext} />
       </p>
       <LargePersonListItem person={person} />
       <QuizWrapped person={person} people={people} possibleQuizAnswers={possibleQuizAnswers} />

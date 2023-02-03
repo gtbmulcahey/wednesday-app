@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { RadioButtonGroup } from './RadioButtonGroup';
 import { printProps } from './printProps';
 import './css/Quiz.css';
-import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { ExpandMoreOrLessButton } from './composition';
 
 
 export const Quiz = ({ person, people, possibleQuizAnswers }) => {
@@ -28,10 +28,10 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
 
   return (
     <>
-      <p>Take the Quiz
-        <IconButton color='primary'  size="large" onClick={() => {setShowQuiz(!showQuiz)}}>
+      <p className="takeQuiz">Take the Quiz - Spoiler alert
+        <ExpandMoreOrLessButton onClick={() => {setShowQuiz(!showQuiz)}}>
           {!showQuiz ? <ExpandMoreIcon className="icons"/> : <ExpandLessIcon className="icons"/> }
-        </IconButton>
+        </ExpandMoreOrLessButton>
       </p>
 
       {showQuiz &&
@@ -40,7 +40,7 @@ export const Quiz = ({ person, people, possibleQuizAnswers }) => {
 
       {userAnswer !== "noUserAnswer" &&
         <p>
-          {(answerCorrect) ? "Your Answer is correct" : "That isn't the right answer. Please try again"}
+          {(answerCorrect) ? `Yes, that is what ${person.name} is known for on the show` : "That isn't the right answer. Please try again"}
         </p>
       }
 

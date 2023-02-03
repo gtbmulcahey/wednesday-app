@@ -1,7 +1,7 @@
 import "../css/LargePersonListItem.css";
 
 export const LargePersonListItem = ({ person }) => {
-	const { name, age, hairColor, hobbies, roleInTheShow } = person;
+	const { name, age, hairColor, hobbies, personality, roleInTheShow } = person;
 
 	console.log("person name is " + name);
 
@@ -10,6 +10,7 @@ export const LargePersonListItem = ({ person }) => {
 			<h2>{name}</h2>
 			<p>Age: {age} years</p>
 			<p>Hair Color: {hairColor}</p>
+			<p>Personality: {personality}</p>
 			<p>{roleInTheShow}</p>
 			<div className="hobbies">
 				Hobbies:&nbsp;
