@@ -1,8 +1,11 @@
-div.hobbies {
+.hobbies {
     list-style-type: none;
     display: -ms-inline-grid;
     width:fit-content;
     padding-left: 0px;
     display:inline-block;
+}
 
+.title {
+    font-weight:bold;
 }
