@@ -8,12 +8,12 @@ export const LargePersonListItem = ({ person }) => {
 	return (
 		<>
 			<h2>{name}</h2>
-			<p>Age: {age} years</p>
-			<p>Hair Color: {hairColor}</p>
-			<p>Personality: {personality}</p>
 			<p>{roleInTheShow}</p>
+			<p><span class='title'>Age:</span> {age} years</p>
+			<p><span class='title'>Hair Color:</span> {hairColor}</p>
+			<p><span class='title'>Personality:</span> {personality}</p>
 			<div className="hobbies">
-				Hobbies:&nbsp;
+				<span class='title'>Hobbies:</span>&nbsp;
 				{hobbies && hobbies.map((hobby, i) => [
 					i > 0 && ", ",
 					<div className="hobbies" key={i}>{hobby}</div>

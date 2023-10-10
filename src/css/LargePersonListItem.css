@@ -4,5 +4,8 @@ div.hobbies {
     width:fit-content;
     padding-left: 0px;
     display:inline-block;
+}
 
+.title {
+    font-weight:bold;
 }
