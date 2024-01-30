@@ -1,40 +1,43 @@
+import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-export const ApplicationIconButton = ({ onClick, ...props }) => {
+const ApplicationIconButton = ({ onClick, children, disableRipple = true, color = 'primary', size = 'large' }) => {
     return (
         <IconButton
-            disableRipple={true}
-            color='primary'
-            size="large"
+            disableRipple={disableRipple}
+            color={color}
+            size={size}
             onClick={onClick}
         >
-            {props.children}
+            {children}
         </IconButton>
     );
 }
 
-export const PreviousButton = ({onClick, props}) => {
+const PreviousButton = ({ onClick }) => {
     return (
         <ApplicationIconButton onClick={onClick} >
             <NavigateBeforeIcon className="icons" />
         </ApplicationIconButton>
-    )
+    );
 }
 
-export const NextButton = ({onClick, props}) => {
+const NextButton = ({ onClick }) => {
     return (
         <ApplicationIconButton onClick={onClick} >
             <NavigateNextIcon className="icons" />
         </ApplicationIconButton>
-    )
+    );
 }
 
-export const ExpandMoreOrLessButton = ({onClick, children, props}) => {
+const ExpandMoreOrLessButton = ({ onClick, children }) => {
     return (
         <ApplicationIconButton onClick={onClick} >
             {children}
         </ApplicationIconButton>
-    )
+    );
 }
+
+export { ApplicationIconButton, PreviousButton, NextButton, ExpandMoreOrLessButton };

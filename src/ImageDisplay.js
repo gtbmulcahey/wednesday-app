@@ -7,6 +7,4 @@ export const ImageDisplay = ({height, alt, person, imageName}) => {
         alt={alt}
         src={images(`./${imageName}`)}/>
     );
-
-
 }
