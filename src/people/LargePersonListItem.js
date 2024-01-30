@@ -9,11 +9,11 @@ export const LargePersonListItem = ({ person }) => {
 		<>
 			<h2>{name}</h2>
 			<p>{roleInTheShow}</p>
-			<p><span class='title'>Age:</span> {age} years</p>
-			<p><span class='title'>Hair Color:</span> {hairColor}</p>
-			<p><span class='title'>Personality:</span> {personality}</p>
+			<p><span className="title">Age:</span> {age} years</p>
+			<p><span className="title">Hair Color:</span> {hairColor}</p>
+			<p><span className="title">Personality:</span> {personality}</p>
 			<p className="hobbies">
-				<span class='title'>Hobbies:</span>&nbsp;
+				<span className="title">Hobbies:</span>&nbsp;
 				{hobbies && hobbies.map((hobby, i) => [
 					i > 0 && ", ",
 					<span key={i}>{hobby}</span>

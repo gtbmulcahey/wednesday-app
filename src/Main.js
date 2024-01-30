@@ -190,6 +190,18 @@ function Main() {
   const QuizWrapped = printProps(Quiz);
   const ImageWrapped = printProps(ImageDisplay);
 
+  //repeat('word', n) -> wordwordword... 
+
+  const findIndex = (arrayOfNumbers, numberToBeReplaced, numberToReplaceItWith) => {   //4, 10
+    const index = arrayOfNumbers.findIndex(numberToBeReplaced);
+    if(index == -1) {
+      return arrayOfNumbers;
+    }
+    arrayOfNumbers[index] = numberToReplaceItWith;  
+    return arrayOfNumbers;
+  }
+  
+  
   return (
     <>
       <p className="navigateThroughImages">
